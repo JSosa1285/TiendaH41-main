@@ -119,8 +119,7 @@ public class Interaccion
         Producto p = a.buscarProducto(codigo);
         int cantidad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese cantidad de "+p.getNombre()+" "+p.getMarca()+" a surtir. Actual: "+p.getCantidad(), "Surtir producto", JOptionPane.QUESTION_MESSAGE));
         int nuevoPrecio = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese precio de "+p.getNombre()+" "+p.getMarca()+" a surtir. Actual: "+p.getPrecio(), "Surtir producto", JOptionPane.QUESTION_MESSAGE));
-        a.aumentarCantProducto(codigo, cantidad);
-        a.modificarPrecio(codigo, nuevoPrecio);
+        a.surtirProducto(codigo, cantidad, nuevoPrecio);
         JOptionPane.showMessageDialog(null, "Producto surtido exitosamente", "Producto surtido", JOptionPane.INFORMATION_MESSAGE);
     }
     
@@ -141,7 +140,7 @@ public class Interaccion
             }
             else
             {
-                JOptionPane.showMessageDialog(null, "Producto no se agregó al carrito", "Producto NO agregado", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "No hay cantidad suficiente para este producto ", "Producto NO agregado", JOptionPane.WARNING_MESSAGE);
             }
             opcion = JOptionPane.showConfirmDialog(null, "Desea continuar agregando productos?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         }

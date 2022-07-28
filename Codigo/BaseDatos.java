@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 
 public class BaseDatos
 {
-    private String conector = "jdbc:sqlite";
+    private String conector = "jdbc:sqlite:";
     private String basedatos = "..\\Basedatos\\base_datos_tienda2";
     private Connection conexion;
     private Statement ejecutor;
